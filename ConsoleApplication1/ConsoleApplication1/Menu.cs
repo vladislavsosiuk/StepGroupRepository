@@ -36,7 +36,14 @@ namespace ConsoleApplication1
 
         public string Remove(string name)
         {
-            throw new NotImplementedException();
+            IPeople person = People.Find(p => p.Name == name);
+            if (person != null)
+            {
+                People.Remove(person);
+                return "removed";
+            }
+            else
+                return "not found";
         }
 
         public void Remove(IPeople person)
