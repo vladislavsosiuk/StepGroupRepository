@@ -74,7 +74,7 @@ namespace ConsoleApplication1
             string phone = Console.ReadLine();
             Console.WriteLine("Input address");
             string address = Console.ReadLine();
-            var result = menu.Add(new People() { Name = name, Phone = phone, Address = address });
+            var result = menu.Add(new Person(name, phone, address ));
             Console.WriteLine(result);
             
         }
