@@ -46,7 +46,7 @@
     <Compile Include="IMenu.cs" />
     <Compile Include="IPeople.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="People.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

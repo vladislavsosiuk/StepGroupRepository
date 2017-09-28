@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    interface IMenu
+    public interface IMenu
     {
         string Add(IPeople person);
         string Remove(string name);
