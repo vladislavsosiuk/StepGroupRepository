@@ -84,7 +84,7 @@ namespace ConsoleApplication1
             }
             return "Saved";
         }
-        public string  Sort(object parameter)
+        public string  Sort()
         {
             People.Sort((a, b) => a.Name.CompareTo(b.Name));
             return "Sorted";
