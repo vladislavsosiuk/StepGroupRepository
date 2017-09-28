@@ -22,21 +22,9 @@ namespace ConsoleApplication1
                 people = value;
             }
         }
-        public void Add(IPeople person)
-        {
-            People.Add(person);
-        }
+       
 
-        public List<IPeople> LoadFromFile()
-        {
-            List<IPeople> res;
-            BinaryFormatter bf = new BinaryFormatter();
-            using (FileStream fs = new FileStream("Peop.dat", FileMode.OpenOrCreate))
-            {
-                res = (List<IPeople>)bf.Deserialize(fs);
-            }
-            return res;
-        }
+       
 
         public void Print()
         {
@@ -44,6 +32,11 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine(r);
             }
+        }
+
+        public string Remove(string name)
+        {
+            throw new NotImplementedException();
         }
 
         public void Remove(IPeople person)
@@ -54,19 +47,34 @@ namespace ConsoleApplication1
                     People.RemoveAt(i);
             }
         }
+        
+        public string Add(IPeople person)
+        {
+            People.Add(person);
+            return "Added";
+        }
 
-        public void SaveToFile()
+        public string LoadFromFile()
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            using (FileStream fs = new FileStream("Peop.dat", FileMode.OpenOrCreate))
+            {
+                People = (List<IPeople>)bf.Deserialize(fs);
+            }
+            return "Loaded";
+        }
+
+        public string SaveToFile()
         {
             BinaryFormatter bf = new BinaryFormatter();
             using (FileStream fs = new FileStream("Peop.dat", FileMode.OpenOrCreate))
             {
                 bf.Serialize(fs, People);
             }
+            return "Saved";
         }
 
-
-
-        void IMenu.Sort(object parameter)
+        void Sort(object parameter)
         {
             list.Sort(delegate (People a, People b) { return a.Name.CompareTo(b.Name); });
         }
