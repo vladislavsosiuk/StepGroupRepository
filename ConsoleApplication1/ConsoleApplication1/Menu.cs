@@ -10,6 +10,10 @@ namespace ConsoleApplication1
 {
     public class Menu : IMenu
     {
+        public Menu()
+        {
+            People = new List<IPeople>();
+        }
         List<IPeople> people;
         public List<IPeople> People
         {
@@ -21,7 +25,7 @@ namespace ConsoleApplication1
             {
                 people = value;
             }
-        }
+       }
        
 
        
