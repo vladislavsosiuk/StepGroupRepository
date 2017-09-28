@@ -73,11 +73,11 @@ namespace ConsoleApplication1
             }
             return "Saved";
         }
-        public void Sort(object parameter)
+        public string  Sort(object parameter)
         {
             People.Sort((a, b) => a.Name.CompareTo(b.Name));
+            return "Sorted";
         }
-
-
+        
     }
 }
