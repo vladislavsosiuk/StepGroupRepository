@@ -66,9 +66,9 @@ namespace ConsoleApplication1
 
 
 
-        void IMenu.Sort(object parameter)
+        void Sort(object parameter)
         {
-            list.Sort(delegate (People a, People b) { return a.Name.CompareTo(b.Name); });
+            People.Sort((a, b) => a.Name.CompareTo(b.Name));
         }
 
 
