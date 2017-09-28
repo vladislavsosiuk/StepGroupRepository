@@ -64,9 +64,13 @@ namespace ConsoleApplication1
             }
         }
 
-        public void Sort(object parameter)
+
+
+        void IMenu.Sort(object parameter)
         {
-            throw new NotImplementedException();
+            list.Sort(delegate (People a, People b) { return a.Name.CompareTo(b.Name); });
         }
+
+
     }
 }

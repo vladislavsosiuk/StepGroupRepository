@@ -12,4 +12,6 @@ namespace ConsoleApplication1
         string Phone { get; set; }
         string Address { get; set; }
     }
+
+
 }

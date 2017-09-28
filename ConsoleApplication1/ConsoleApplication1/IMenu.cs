@@ -8,11 +8,11 @@ namespace ConsoleApplication1
 {
     public interface IMenu
     {
-        void Add(IPeople person);
-        void Remove(IPeople person);
-        void Sort(object parameter);
+        string Add(IPeople person);
+        string Remove(string name);
+        string Sort(object parameter);
         void Print();
-        void SaveToFile(List<IPeople> people);
-        List<IPeople> LoadFromFile(string fileName);
+        string SaveToFile();
+        string LoadFromFile();
     }
 }
