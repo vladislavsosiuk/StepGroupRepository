@@ -10,7 +10,7 @@ namespace ConsoleApplication1
     {
         string Add(IPeople person);
         string Remove(string name);
-        string Sort(object parameter);
+        string Sort();
         void Print();
         string SaveToFile();
         string LoadFromFile();

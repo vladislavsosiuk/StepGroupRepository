@@ -54,9 +54,7 @@ namespace ConsoleApplication1
         }
         private static void Sort()
         {
-            Console.WriteLine("Input sortExpression");
-            var se = Console.ReadLine();
-            var result = menu.Sort(se);
+            var result = menu.Sort();
             Console.WriteLine(result);
         }
         private static void Remove()
