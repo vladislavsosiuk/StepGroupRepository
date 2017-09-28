@@ -6,45 +6,55 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class People : IPeople
+   public  class People : IPeople
     {
-        public string Address
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+      public   string Name { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
 
-            set
+      
+         
+    }
+
+    public class Menu : IMenu
+    {
+        List<People> list;
+       
+
+        void IMenu.Add(IPeople person)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IMenu.Remove(IPeople person)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IMenu.Sort(object parameter)
+        {
+            list.Sort(delegate (People a, People b) { return a.Name.CompareTo(b.Name); });
+        }
+
+        void IMenu.Print()
+        {
+            foreach (People i in list)
             {
-                throw new NotImplementedException();
+                Console.WriteLine("Name: " + i.Name + "   Phone: " + i.Phone + "Adress:" + i.Address);
             }
         }
 
-        public string Name
+        void IMenu.SaveToFile(List<IPeople> people)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
         }
 
-        public string Phone
+        List<IPeople> IMenu.LoadFromFile(string fileName)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
         }
     }
+  
+
+
 }
