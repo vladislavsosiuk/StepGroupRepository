@@ -6,34 +6,40 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Menu : IMenu
+    public class Menu : IMenu
     {
-        public string Add(IPeople person)
+        List<People> list;
+
+
+        void IMenu.Add(IPeople person)
         {
             throw new NotImplementedException();
         }
 
-        public string LoadFromFile()
+        void IMenu.Remove(IPeople person)
         {
             throw new NotImplementedException();
         }
 
-        public void Print()
+        void IMenu.Sort(object parameter)
+        {
+            list.Sort(delegate (People a, People b) { return a.Name.CompareTo(b.Name); });
+        }
+
+        void IMenu.Print()
+        {
+            foreach (People i in list)
+            {
+                Console.WriteLine("Name: " + i.Name + "   Phone: " + i.Phone + "Adress:" + i.Address);
+            }
+        }
+
+        void IMenu.SaveToFile(List<IPeople> people)
         {
             throw new NotImplementedException();
         }
 
-        public string Remove(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string SaveToFile()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Sort(object parameter)
+        List<IPeople> IMenu.LoadFromFile(string fileName)
         {
             throw new NotImplementedException();
         }
